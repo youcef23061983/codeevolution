@@ -20,12 +20,12 @@ const App = () => {
 
     const ogImage = document.createElement("meta");
     ogImage.property = "og:image";
-    ogImage.content = "https://example.com/image.jpg";
+    ogImage.content = "https://codeevolution.vercel.app/1.jpg";
     document.head.appendChild(ogImage);
 
     const ogUrl = document.createElement("meta");
     ogUrl.property = "og:url";
-    ogUrl.content = "/1.jpg";
+    ogUrl.content = "https://codeevolution.vercel.app";
     document.head.appendChild(ogUrl);
 
     const ogType = document.createElement("meta");
