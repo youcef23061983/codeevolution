@@ -10,9 +10,13 @@ const Meta = ({ post }) => {
       <meta property="og:description" content={post.ogDescription} />
       <meta property="og:image" content={post.ogImage} />
       <meta property="og:url" content={window.location.href} />
+      <meta property="og:type" content="website" />
+
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={post.twitterTitle} />
       <meta name="twitter:description" content={post.twitterDescription} />
+      <meta property="twitter:domain" content="codeevolution.vercel.app" />
+
       <meta name="twitter:image" content={post.twitterImage} />
       <meta name="robots" content="index, follow" />
       <meta name="keywords" content={post.keywords} />
