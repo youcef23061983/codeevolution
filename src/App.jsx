@@ -52,47 +52,50 @@
 //   );
 // };
 
-// export default App;
+// export default App;import { useEffect } from 'react';
+
 const App = () => {
-  document.title = "React 19 New Meta";
-  document
-    .querySelector('meta[name="description"]')
-    ?.setAttribute("content", "wait and see");
+  useEffect(() => {
+    document.title = "React 19 New Meta";
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", "wait and see");
 
-  const metaTags = [
-    { name: "og:url", content: "https://codeevolution.vercel.app" },
-    { name: "og:type", content: "website" },
-    { name: "og:title", content: "Vite + React" },
-    { name: "og:description", content: "wait and see" },
-    { name: "og:image", content: "https://codeevolution.vercel.app/1.jpg" },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:domain", content: "codeevolution.vercel.app" },
-    { name: "twitter:url", content: "https://codeevolution.vercel.app" },
-    { name: "twitter:title", content: "twitter title" },
-    { name: "twitter:description", content: "twitter description" },
-    {
-      name: "twitter:image",
-      content: "https://codeevolution.vercel.app/1.jpg",
-    },
-    { name: "keywords", content: "keywords of meta react19" },
-    { name: "author", content: "author content of react19 meta" },
-  ];
+    const metaTags = [
+      { name: "og:url", content: "https://codeevolution.vercel.app" },
+      { name: "og:type", content: "website" },
+      { name: "og:title", content: "Vite + React" },
+      { name: "og:description", content: "wait and see" },
+      { name: "og:image", content: "https://codeevolution.vercel.app/1.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:domain", content: "codeevolution.vercel.app" },
+      { name: "twitter:url", content: "https://codeevolution.vercel.app" },
+      { name: "twitter:title", content: "twitter title" },
+      { name: "twitter:description", content: "twitter description" },
+      {
+        name: "twitter:image",
+        content: "https://codeevolution.vercel.app/1.jpg",
+      },
+      { name: "keywords", content: "keywords of meta react19" },
+      { name: "author", content: "author content of react19 meta" },
+    ];
 
-  metaTags.forEach((tag) => {
-    let element = document.querySelector(
-      `meta[name='${tag.name}'], meta[property='${tag.name}']`
-    );
-    if (!element) {
-      element = document.createElement("meta");
-      if (tag.name.startsWith("og:") || tag.name.startsWith("twitter:")) {
-        element.setAttribute("property", tag.name);
-      } else {
-        element.setAttribute("name", tag.name);
+    metaTags.forEach((tag) => {
+      let element = document.querySelector(
+        `meta[name='${tag.name}'], meta[property='${tag.name}']`
+      );
+      if (!element) {
+        element = document.createElement("meta");
+        if (tag.name.startsWith("og:") || tag.name.startsWith("twitter:")) {
+          element.setAttribute("property", tag.name);
+        } else {
+          element.setAttribute("name", tag.name);
+        }
+        document.head.appendChild(element);
       }
-      document.head.appendChild(element);
-    }
-    element.setAttribute("content", tag.content);
-  });
+      element.setAttribute("content", tag.content);
+    });
+  }, []);
 
   return (
     <div>
